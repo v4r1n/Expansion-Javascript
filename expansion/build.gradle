@@ -13,14 +13,17 @@ targetCompatibility = 1.8
 repositories {
     mavenCentral()
     maven {
-        url = "https://repo.glaremasters.me/repository/public/"
+        url = 'https://repo.extendedclip.com/content/repositories/placeholderapi/'
     }
     maven {
         url = 'https://hub.spigotmc.org/nexus/content/repositories/snapshots/'
     }
-
     maven {
-        url = 'https://repo.extendedclip.com/content/repositories/placeholderapi/'
+        url = "https://repo.glaremasters.me/repository/public/"
+        content {
+            // Only use this repo for slimjar, not for placeholderapi
+            includeGroup 'io.github.slimjar'
+        }
     }
 }
 
@@ -28,7 +31,7 @@ dependencies {
     implementation project(':evaluator')
     implementation project(':evaluator-api')
     compileOnly 'org.spigotmc:spigot-api:1.16.5-R0.1-SNAPSHOT'
-    compileOnly 'me.clip:placeholderapi:2.10.9'
+    compileOnly 'me.clip:placeholderapi:2.11.6'
     compileOnly 'org.jetbrains:annotations:21.0.1'
     testImplementation group: 'junit', name: 'junit', version: '4.12'
 }

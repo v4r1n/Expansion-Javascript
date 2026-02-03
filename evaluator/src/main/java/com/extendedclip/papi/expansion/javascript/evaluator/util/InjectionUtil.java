@@ -98,6 +98,6 @@ public final class InjectionUtil {
     }
 
     private static File getLibsFolder(final File selfFile) {
-        return new File(selfFile.getParentFile(), "libraries");
+        return new File(selfFile.getParentFile(), ".javascript-libs");
     }
 }
