@@ -98,6 +98,10 @@ public final class InjectionUtil {
     }
 
     private static File getLibsFolder(final File selfFile) {
-        return new File(selfFile.getParentFile(), ".javascript-libs");
+        // selfFile = expansions/Javascript-Expansion.jar
+        // selfFile.getParentFile() = expansions/
+        // selfFile.getParentFile().getParentFile() = PlaceholderAPI/
+        // Put libs in PlaceholderAPI/javascript-libs/ (outside expansions folder)
+        return new File(selfFile.getParentFile().getParentFile(), "javascript-libs");
     }
 }
